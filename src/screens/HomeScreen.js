@@ -6,14 +6,18 @@ const HomeScreen = ({ navigation }) => {
     
     return (
         <View>
-            <Text>Home Screen</Text>
-            <Button title="Add Task" onPress={()=> navigation.navigate('AddTask')}/>
+            <Text style={styles.title}>Home Screen</Text>
+            <Button 
+              title="Add Task" 
+              onPress={()=> navigation.navigate('AddTask')}/>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-
+    title: {
+        fontSize: 25,
+    }
 });
 
 export default HomeScreen;
