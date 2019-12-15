@@ -19,4 +19,10 @@ const newTask = (txt) => {
     });
 };
 
-export default newTask;
+const getTasks = async () => {
+    const query = new Parse.Query(Task);
+    const res = await query.find();
+    return res;
+};
+
+export default {newTask, getTasks};
