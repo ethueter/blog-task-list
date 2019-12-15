@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button, Input } from 'react-native-elements';
+import newTask from '../components/task';
 
 
 
@@ -17,7 +18,7 @@ const AddTaskScreen = ({ navigation }) => {
               />
             <Button 
               title="Submit"
-              onPress={() => console.log(text)}
+              onPress={() => newTask(text)}
             />
         </View>
     );
