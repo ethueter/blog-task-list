@@ -15,7 +15,7 @@ const newTask = (txt) => {
     .then((task) => {
         console.log('New Task Added', task)
     }, (error) => {
-        console.log('this task was not saved', error)
+        console.log('this task was not saved',task, error)
     });
 };
 
