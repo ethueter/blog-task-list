@@ -16,7 +16,9 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     title: {
-        fontSize: 25,
+        fontSize: 30,
+        textAlign: 'center',
+        margin: 15,
     }
 });
 
