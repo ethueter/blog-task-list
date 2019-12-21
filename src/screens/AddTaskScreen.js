@@ -5,6 +5,7 @@ import newTask from '../components/task';
 
 
 
+
 const AddTaskScreen = ({ navigation }) => {
     const [text, setText] = useState('');
 
