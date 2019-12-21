@@ -1,12 +1,4 @@
-import React from 'react';
-import { AsyncStorage } from 'react-native';
 import Parse from 'parse/react-native';
-
-
-
-Parse.initialize('TASK_LIST_PROJECT', 'TASK_ADMIN');
-Parse.serverURL = 'http://localhost:1337/parse/classes/Tasks';
-Parse.setAsyncStorage(AsyncStorage);
 
 const Task = Parse.Object.extend('Task');
 
