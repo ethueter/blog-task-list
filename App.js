@@ -6,8 +6,8 @@ import AddTaskScreen from './src/screens/AddTaskScreen';
 import Parse from 'parse/react-native';
 import { AsyncStorage } from 'react-native';
 
-Parse.initialize('TASK_LIST_PROJECT', 'TASK_ADMIN');
-Parse.serverURL = 'http://192.168.86.47:1337/parse';
+Parse.initialize('TASK_LIST_PROJECT', 'TASK_ADMIN', 'TaskJSKey');
+Parse.serverURL = 'http://192.168.86.53:1337/parse';
 Parse.setAsyncStorage(AsyncStorage);
 
 
