@@ -1,9 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { ListItem } from 'react-native-elements';
-import { Icon } from 'react-native-vector-icons';
 
-const TaskList = ({list}) => {
+
+const TaskList = () => {
     return (
         <View>
             <Text>This will be a list of tasks</Text>

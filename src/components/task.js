@@ -10,7 +10,7 @@ const newTask = (txt) => {
 
     task.save()
     .then((task) => {
-        console.log('New Task Added', task)
+        console.log(task.toJSON());
     }, (error) => {
         console.log('this task was not saved',task, error)
     });
