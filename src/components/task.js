@@ -10,11 +10,23 @@ const newTask = (txt) => {
 
     task.save()
     .then((task) => {
-        console.log(task.toJSON());
+        console.log(task);
     }, (error) => {
         console.log('this task was not saved',task, error)
     });
 };
+
+
+
+export default newTask;
+
+
+
+
+
+
+
+
 
 const getTasks = async () => {
     const query = new Parse.Query(Task);
@@ -22,8 +34,3 @@ const getTasks = async () => {
     console.log(res);
     return res;
 };
-
-export default (newTask, getTasks);
-
-
-

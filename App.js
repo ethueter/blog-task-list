@@ -30,5 +30,5 @@ export default createAppContainer(AppNavigator);
 
 
 
-
+// Parse.initialize("YOUR_APP_ID", "YOUR_JAVASCRIPT_KEY", "YOUR_MASTERKEY")
 
