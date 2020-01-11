@@ -1,27 +1,16 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import SingleTask from './singleTask';
 
+const SingleTask = () => {
 
-
-const TaskList = ({ taskList }) => {
     return (
         <View>
-            {}
-            <SingleTask/>
+            <Text>This is a single task.</Text>
         </View>
-    );
+    )
+
 };
 
 const styles = StyleSheet.create({});
 
-export default TaskList;
-
-
-
-
-
-
-
-
-
+export default SingleTask;

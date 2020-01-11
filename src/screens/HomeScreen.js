@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import TaskList from '../components/taskList';
-import  getTasks  from '../components/task';
+import  { getTasks }  from '../components/task';
 
 const HomeScreen = ({ navigation }) => {
-    const {tasks, setTasks} = useState([]);
+    const [tasks, setTasks] = useState([]);
     return (
         <View>
             <Text style={styles.title}>Home Screen</Text>
-            <TaskList />
             <Button 
               title="Add Task" 
               onPress={()=> navigation.navigate('AddTask')}/>
             <Button
               title="Show Tasks"
-              onPress={() => {}}/>
-            {tasks ? <Text>Yes</Text> : <Text>No</Text>}
+              onPress={() => {
+                  const list = getTasks();
+                  setTasks(list);
+                  }}/>
+            {tasks ? <TaskList taskList={tasks}/> : <Text style={styles.listTitle}>No Tasks Yet</Text>}
         </View>
     );
 };
@@ -24,6 +26,11 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     title: {
         fontSize: 30,
+        textAlign: 'center',
+        margin: 15,
+    },
+    listTitle: {
+        fontSize: 25,
         textAlign: 'center',
         margin: 15,
     }
