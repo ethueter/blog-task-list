@@ -6,9 +6,10 @@ import AddTaskScreen from './src/screens/AddTaskScreen';
 import Parse from 'parse/react-native';
 import { AsyncStorage } from 'react-native';
 
+Parse.setAsyncStorage(AsyncStorage);
 Parse.initialize('taskList', 'taskMaster', 'taskJSKey');
 Parse.serverURL = 'http://192.168.1.130:1337/parse';
-Parse.setAsyncStorage(AsyncStorage);
+
 
 
 const AppNavigator = createStackNavigator({
@@ -25,3 +26,9 @@ const AppNavigator = createStackNavigator({
 
 
 export default createAppContainer(AppNavigator);
+
+
+
+
+
+

@@ -19,7 +19,10 @@ const AddTaskScreen = ({ navigation }) => {
               />
             <Button 
               title="Submit"
-              onPress={() => newTask(text)}
+              onPress={() => {
+                  newTask(text);
+                  setText('');
+                }}
             />
         </View>
     );
