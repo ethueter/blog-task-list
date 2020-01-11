@@ -4,6 +4,7 @@ import { Button } from 'react-native-elements';
 import TaskList from '../components/taskList';
 import  { getTasks }  from '../components/task';
 
+
 const HomeScreen = ({ navigation }) => {
     const [tasks, setTasks] = useState([]);
     return (
@@ -13,12 +14,13 @@ const HomeScreen = ({ navigation }) => {
               title="Add Task" 
               onPress={()=> navigation.navigate('AddTask')}/>
             <Button
-              title="Show Tasks"
-              onPress={() => {
-                  const list = getTasks();
-                  setTasks(list);
+              title = "Show Tasks"
+              onPress = {() => { 
+                  const list = getTasks(); 
+                  setTasks(list); 
                   }}/>
-            {tasks ? <TaskList taskList={tasks}/> : <Text style={styles.listTitle}>No Tasks Yet</Text>}
+           
+            {tasks ? <TaskList tskList={tasks}/> : <Text style={styles.listTitle}>No Tasks Yet</Text>}
         </View>
     );
 };
@@ -37,3 +39,5 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
+
+

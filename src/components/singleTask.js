@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const SingleTask = () => {
+const SingleTask = ({listing}) => {
 
     return (
         <View>
-            <Text>This is a single task.</Text>
+            <Text>Single Tasks</Text>
         </View>
     )
 

@@ -1,14 +1,22 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import { ListItem } from 'react-native-elements';
 import SingleTask from './singleTask';
 
 
 
-const TaskList = ({ taskList }) => {
+const TaskList = ({ tskList }) => {
     return (
         <View>
-            {}
-            <SingleTask/>
+            {
+                tskList.map(tsk => (
+                    <ListItem 
+                        key={tsk.id}
+                        title={tsk.task}
+                    />
+                ))
+            }
+            <SingleTask listing={tskList}/>
         </View>
     );
 };

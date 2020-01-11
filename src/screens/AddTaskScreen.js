@@ -22,6 +22,7 @@ const AddTaskScreen = ({ navigation }) => {
               onPress={() => {
                   newTask(text);
                   setText('');
+                  navigation.navigate('Home')
                 }}
             />
         </View>
