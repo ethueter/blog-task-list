@@ -12,15 +12,14 @@ const TaskList = ({ tskList }) => {
     return (
         <View>
             {
-                tskList.map((tsk, i) => (
+                tskList.map(tsk => (
                     <ListItem 
-                        key={i}
-                        title={tsk.task}
+                        key={tsk.id}
+                        title={tsk.get("task")}
                         bottomDivider
                     />
                 ))
             }
-            <SingleTask listing={tskList}/>
         </View>
     );
 };
