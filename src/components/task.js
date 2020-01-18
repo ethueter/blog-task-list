@@ -16,15 +16,18 @@ const newTask = (txt) => {
     });
 };
 
-const getTasks = async () => {
-    const query = new Parse.Query(Task);
-    const res = await query.find();
-    console.log(res);
-    return res;
+const getTasks = async () => {  
+    try {
+        const query = new Parse.Query(Task);
+        const res = await query.find();
+        return res;
+    } catch (err) {
+        alert("There was an error with your request", err)
+    }
 };
 
 
-export  {newTask, getTasks };
+export  { newTask, getTasks };
 
 
 

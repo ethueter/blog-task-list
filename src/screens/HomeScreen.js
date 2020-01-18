@@ -9,19 +9,25 @@ const HomeScreen = ({ navigation }) => {
     const [tasks, setTasks] = useState([]);
 
     const getList = async () => {
-        const list = await getTasks();
-        setTasks(list);
+        try {
+            const list = await getTasks();
+            setTasks(list);
+        } catch (err) {
+            alert("There was an issue with the request.", err)
+        }
     }
+    
     return (
         <View>
-            <Text style={styles.title}>Home Screen</Text>
+            <Text style={styles.title}>Tyler's Task App</Text>
             <Button 
               title="Add Task" 
               onPress={()=> navigation.navigate('AddTask')}/>
             <Button
               title = "Show Tasks"
               onPress = {() => getList() }/>
-                  {tasks.length > 0 ? <TaskList tskList={tasks} /> : null}
+              <Text style={styles.listTitle}>Upcoming Tasks</Text>
+            {tasks.length > 0 ? <TaskList tskList={tasks} /> : null}
         </View>
     );
 };

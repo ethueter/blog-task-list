@@ -1,14 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
-import SingleTask from './singleTask';
+
 
 
 
 
 const TaskList = ({ tskList }) => {
 
-    console.log("this is the list",tskList[0])
     return (
         <View>
             {

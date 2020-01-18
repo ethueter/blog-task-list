@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import newTask from '../components/task';
+import { newTask } from '../components/task';
 
 
 
