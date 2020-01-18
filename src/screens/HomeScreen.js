@@ -7,6 +7,11 @@ import  { getTasks }  from '../components/task';
 
 const HomeScreen = ({ navigation }) => {
     const [tasks, setTasks] = useState([]);
+
+    const getList = async () => {
+        const list = await getTasks();
+        setTasks(list);
+    }
     return (
         <View>
             <Text style={styles.title}>Home Screen</Text>
@@ -15,12 +20,8 @@ const HomeScreen = ({ navigation }) => {
               onPress={()=> navigation.navigate('AddTask')}/>
             <Button
               title = "Show Tasks"
-              onPress = {() => { 
-                  const list = getTasks(); 
-                  setTasks(list); 
-                  }}/>
-           
-            {tasks ? <TaskList tskList={tasks}/> : <Text style={styles.listTitle}>No Tasks Yet</Text>}
+              onPress = {() => getList() }/>
+                  {tasks.length > 0 ? <TaskList tskList={tasks} /> : null}
         </View>
     );
 };

@@ -24,7 +24,7 @@ const getTasks = async () => {
 };
 
 
-export {newTask, getTasks };
+export  {newTask, getTasks };
 
 
 

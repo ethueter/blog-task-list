@@ -5,14 +5,18 @@ import SingleTask from './singleTask';
 
 
 
+
 const TaskList = ({ tskList }) => {
+
+    console.log("this is the list",tskList[0])
     return (
         <View>
             {
-                tskList.map(tsk => (
+                tskList.map((tsk, i) => (
                     <ListItem 
-                        key={tsk.id}
+                        key={i}
                         title={tsk.task}
+                        bottomDivider
                     />
                 ))
             }
