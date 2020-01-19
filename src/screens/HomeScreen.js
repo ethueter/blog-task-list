@@ -16,7 +16,7 @@ const HomeScreen = ({ navigation }) => {
             alert("There was an issue with the request.", err)
         }
     }
-    
+
     return (
         <View>
             <Text style={styles.title}>Tyler's Task App</Text>
@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
               title = "Show Tasks"
               onPress = {() => getList() }/>
               <Text style={styles.listTitle}>Upcoming Tasks</Text>
-            {tasks.length > 0 ? <TaskList tskList={tasks} /> : null}
+            {tasks.length > 0 ? <TaskList tskList={tasks} refresh={() => getList()} /> : null}
         </View>
     );
 };

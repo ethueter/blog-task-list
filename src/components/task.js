@@ -26,8 +26,16 @@ const getTasks = async () => {
     }
 };
 
+const deleteTask = (obj) => {
+    try {
+        obj.destroy();
+    } catch (err) {
+        alert("This task was not deleted.", err)
+    }
+}
 
-export  { newTask, getTasks };
+
+export  { newTask, getTasks, deleteTask };
 
 
 
