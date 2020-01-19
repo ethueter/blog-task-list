@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Button } from 'react-native-elements';
 import TaskList from '../components/taskList';
 import  { getTasks }  from '../components/task';
@@ -18,17 +18,20 @@ const HomeScreen = ({ navigation }) => {
     }
 
     return (
-        <View>
-            <Text style={styles.title}>Tyler's Task App</Text>
-            <Button 
-              title="Add Task" 
-              onPress={()=> navigation.navigate('AddTask')}/>
-            <Button
-              title = "Show Tasks"
-              onPress = {() => getList() }/>
-              <Text style={styles.listTitle}>Upcoming Tasks</Text>
-            {tasks.length > 0 ? <TaskList tskList={tasks} refresh={() => getList()} /> : null}
-        </View>
+      <View>
+        <Text style={styles.title}>Tyler's Task App</Text>
+        <Button
+          title="Add Task"
+          onPress={() => navigation.navigate("AddTask")}
+        />
+        <Button title="Show Tasks" onPress={() => getList()} />
+        <Text style={styles.listTitle}>Upcoming Tasks</Text>
+        <ScrollView>
+          {tasks.length > 0 ? (
+            <TaskList tskList={tasks} refresh={() => getList()} />
+          ) : null}
+        </ScrollView>
+      </View>
     );
 };
 
