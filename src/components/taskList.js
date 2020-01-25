@@ -4,7 +4,7 @@ import { ListItem, Icon } from 'react-native-elements';
 import { deleteTask } from './task';
 
 
-const TaskList = ({ tskList, refresh }) => {
+const TaskList = ({ tskList }) => {
 
     return (
       <View>
@@ -25,7 +25,7 @@ const TaskList = ({ tskList, refresh }) => {
                 type="Feather"
                 onPress={() => {
                   deleteTask(tsk);
-                  refresh();
+                  
                 }}
               />
             }

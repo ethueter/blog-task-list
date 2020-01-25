@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Button } from 'react-native-elements';
 import TaskList from '../components/taskList';
@@ -17,6 +17,10 @@ const HomeScreen = ({ navigation }) => {
         }
     }
 
+    useEffect(() => {
+      getList();
+    })
+
     return (
       <View>
         <Text style={styles.title}>Tyler's Task App</Text>
@@ -28,7 +32,7 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.listTitle}>Upcoming Tasks</Text>
         <ScrollView>
           {tasks.length > 0 ? (
-            <TaskList tskList={tasks} refresh={() => getList()} />
+            <TaskList tskList={tasks} />
           ) : null}
         </ScrollView>
       </View>
