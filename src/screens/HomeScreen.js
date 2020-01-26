@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Header } from 'react-native-elements';
+import TaskTitleBar from '../components/taskTitleBar';
 import TaskList from '../components/taskList';
+import Spacer from '../components/Spacer';
 import  { getTasks }  from '../components/task';
 
 
@@ -23,13 +25,11 @@ const HomeScreen = ({ navigation }) => {
 
     return (
       <View>
-        <Text style={styles.title}>Tyler's Task App</Text>
-        <Button
-          title="Add Task"
-          onPress={() => navigation.navigate("AddTask")}
+        <Header 
+          centerComponent={{ text: "Tyler's Task App", style: {fontSize: 30} }}
         />
-        <Button title="Show Tasks" onPress={() => getList()} />
-        <Text style={styles.listTitle}>Upcoming Tasks</Text>
+        <Spacer />
+        <TaskTitleBar />
         <ScrollView>
           {tasks.length > 0 ? (
             <TaskList tskList={tasks} />

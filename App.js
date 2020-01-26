@@ -20,7 +20,8 @@ const AppNavigator = createStackNavigator({
 {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    title: 'Task List Project',
+    title: "Task List Project"
+    
   }
 }
 );
