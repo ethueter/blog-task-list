@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, Icon } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 import { withNavigation } from 'react-navigation'; 
 
 
@@ -11,7 +11,7 @@ const TaskTitleBar = ({ navigation }) => {
         style={{
           flexDirection: "row",
           height: 45,
-          justifyContent: "space-evenly"
+          justifyContent: "flex-end"
         }}
       >
         <Text style={styles.title}>Upcoming Tasks</Text>
@@ -27,16 +27,15 @@ const TaskTitleBar = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        justifyContent: 'center',
-    },
-    iconRight: {
-        marginTop: 5,
-        
-    }
-
+  title: {
+    marginRight: 75,
+    fontSize: 25,
+    fontWeight: "bold"
+  },
+  iconRight: {
+    marginTop: 5,
+    marginRight: 10
+  }
 });
 
 export default withNavigation(TaskTitleBar);

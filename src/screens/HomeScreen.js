@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Button, Header } from 'react-native-elements';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Header } from 'react-native-elements';
 import TaskTitleBar from '../components/taskTitleBar';
 import TaskList from '../components/taskList';
 import Spacer from '../components/Spacer';
 import  { getTasks }  from '../components/task';
 
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
     const [tasks, setTasks] = useState([]);
 
     const getList = async () => {
@@ -35,21 +35,20 @@ const HomeScreen = ({ navigation }) => {
             <TaskList tskList={tasks} />
           ) : null}
         </ScrollView>
+        <Text style={styles.title}>Completed Tasks</Text>
+        <ScrollView>
+
+        </ScrollView>
       </View>
     );
 };
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 30,
-        textAlign: 'center',
-        margin: 15,
-    },
-    listTitle: {
-        fontSize: 25,
-        textAlign: 'center',
-        margin: 15,
-    }
+  title: {
+    fontSize: 25,
+    fontWeight: "bold",
+    alignSelf: 'center',
+  }
 });
 
 export default HomeScreen;

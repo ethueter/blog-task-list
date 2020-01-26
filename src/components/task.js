@@ -26,6 +26,16 @@ const getTasks = async () => {
     }
 };
 
+const completeTask = (obj) => {
+    obj.set("completed", true);
+    try {
+        obj.save();
+        alert("Good Job!")
+    } catch (err) {
+        alert("Sorry couldn't complete that task. Please try again", err)
+    }
+}
+
 const deleteTask = (obj) => {
     try {
         obj.destroy();
@@ -35,7 +45,7 @@ const deleteTask = (obj) => {
 }
 
 
-export  { newTask, getTasks, deleteTask };
+export  { newTask, getTasks, deleteTask, completeTask };
 
 
 
