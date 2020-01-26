@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements';
-import { deleteTask } from './task';
+import { completeTask, deleteTask } from './task';
 
 
 const TaskList = ({ tskList }) => {
+  
 
     return (
       <View>
@@ -16,7 +17,7 @@ const TaskList = ({ tskList }) => {
               <Icon
                 name="check-circle"
                 type="Feather"
-                onPress={() => console.log("Good Job!")}
+                onPress={() => completeTask(tsk)}
               />
             }
             rightIcon={

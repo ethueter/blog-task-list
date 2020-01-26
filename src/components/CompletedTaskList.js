@@ -4,11 +4,11 @@ import { ListItem, Icon } from 'react-native-elements';
 import { deleteTask } from './task';
 
 
-const CompletedTaskList = ({ tskList }) => {
+const CompletedTaskList = ({ compTaskList }) => {
 
     return (
         <View>
-            {tskList.map(tsk => (
+            {compTaskList.map(tsk => (
                 <ListItem
                     key={tsk.id}
                     title={tsk.get("task")}

@@ -19,6 +19,18 @@ const newTask = (txt) => {
 const getTasks = async () => {  
     try {
         const query = new Parse.Query(Task);
+        query.equalTo("completed", false)
+        const res = await query.find();
+        return res;
+    } catch (err) {
+        alert("There was an error with your request", err)
+    }
+};
+
+const getCompTasks = async () => {
+    try {
+        const query = new Parse.Query(Task);
+        query.equalTo("completed", true)
         const res = await query.find();
         return res;
     } catch (err) {
@@ -45,7 +57,7 @@ const deleteTask = (obj) => {
 }
 
 
-export  { newTask, getTasks, deleteTask, completeTask };
+export  { newTask, getTasks, getCompTasks, deleteTask, completeTask };
 
 
 
