@@ -19,7 +19,7 @@ const newTask = (txt) => {
 const getTasks = async () => {  
     try {
         const query = new Parse.Query(Task);
-        query.equalTo("completed", false)
+        // query.equalTo("completed", false)
         const res = await query.find();
         return res;
     } catch (err) {

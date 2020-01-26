@@ -10,7 +10,7 @@ import  { getTasks, getCompTasks }  from '../components/task';
 
 const HomeScreen = () => {
     const [tasks, setTasks] = useState([]);
-    const [compTasks, setCompTasks] = useState([]);
+    // const [compTasks, setCompTasks] = useState([]);
 
     const getList = async () => {
         try {
@@ -21,18 +21,18 @@ const HomeScreen = () => {
         }
     }
 
-    const getCompList = async () => {
-      try {
-        const compList = await getCompTasks();
-        setCompTasks(compList);
-      } catch (err) {
-        alert("There was an issue with the request.", err)
-      }
-    }
+    // const getCompList = async () => {
+    //   try {
+    //     const compList = await getCompTasks();
+    //     setCompTasks(compList);
+    //   } catch (err) {
+    //     alert("There was an issue with the request.", err)
+    //   }
+    // }
 
     useEffect(() => {
       getList();
-      getCompList();
+      // getCompList();
     })
 
     return (
@@ -50,7 +50,7 @@ const HomeScreen = () => {
         </ScrollView>
         <Text style={styles.title}>Completed Tasks</Text>
         <ScrollView>
-          {compTasks.length > 0 ? <CompletedTaskList compTaskList={compTasks} /> : null}
+          {/* {compTasks.length > 0 ? <CompletedTaskList compTaskList={compTasks} /> : null} */}
         </ScrollView>
       </View>
     );
