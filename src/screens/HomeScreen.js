@@ -10,29 +10,23 @@ import  { getTasks, getCompTasks }  from '../components/task';
 
 const HomeScreen = () => {
     const [tasks, setTasks] = useState([]);
-    // const [compTasks, setCompTasks] = useState([]);
+    const [compTasks, setCompTasks] = useState([]);
+    let todo = tasks.filter(tsk => tsk.get("completed") === false);
+    let done = tasks.filter(tsk => tsk.get("completed") === true);
 
     const getList = async () => {
         try {
             const list = await getTasks();
-            setTasks(list);     
+            setTasks(list);
+            // setCompTasks(done);     
         } catch (err) {
             alert("There was an issue with the request.", err)
         }
     }
 
-    // const getCompList = async () => {
-    //   try {
-    //     const compList = await getCompTasks();
-    //     setCompTasks(compList);
-    //   } catch (err) {
-    //     alert("There was an issue with the request.", err)
-    //   }
-    // }
-
     useEffect(() => {
       getList();
-      // getCompList();
+      
     })
 
     return (
@@ -46,11 +40,11 @@ const HomeScreen = () => {
         <Spacer />
         <TaskTitleBar />
         <ScrollView>
-          {tasks.length > 0 ? <TaskList tskList={tasks} /> : null}
+          {tasks.length > 0 ? <TaskList tskList={todo} /> : null}
         </ScrollView>
         <Text style={styles.title}>Completed Tasks</Text>
         <ScrollView>
-          {/* {compTasks.length > 0 ? <CompletedTaskList compTaskList={compTasks} /> : null} */}
+          {done.length > 0 ? <CompletedTaskList compTaskList={done} /> : null }
         </ScrollView>
       </View>
     );

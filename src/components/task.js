@@ -16,6 +16,7 @@ const newTask = (txt) => {
     });
 };
 
+
 const getTasks = async () => {  
     try {
         const query = new Parse.Query(Task);

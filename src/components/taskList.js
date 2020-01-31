@@ -5,6 +5,7 @@ import { completeTask, deleteTask } from './task';
 
 
 const TaskList = ({ tskList }) => {
+
   
 
     return (
@@ -32,7 +33,7 @@ const TaskList = ({ tskList }) => {
             }
             bottomDivider
           />
-        ))}
+          ))}
       </View>
     );
 };
